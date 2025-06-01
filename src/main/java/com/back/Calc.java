@@ -2,11 +2,19 @@ package com.back;
 
 public class Calc {
     public static int run(String exp){
-        String[] expression = exp.split(" \\+ ");
+        String[] expression = exp.split(" ");
 
         int num1 = Integer.parseInt(expression[0]);
-        int num2 = Integer.parseInt(expression[1]);
+        String operator = expression[1];
+        int num2 = Integer.parseInt(expression[2]);
 
-        return num1 + num2;
+        int result = 0;
+
+        if (operator.equals("+")) {
+             result = num1 + num2;
+        } else if (operator.equals("-")) {
+            result = num1 - num2;
+        }
+        return result;
     }
 }
