@@ -11,6 +11,8 @@ public class Calc {
                 result += Integer.parseInt(expression[i+1]);
             } else if (expression[i].equals("-")) {
                 result -= Integer.parseInt(expression[i+1]);
+            } else if (expression[i].equals("*")) {
+                result *= Integer.parseInt(expression[i+1]);
             }
         }
 
