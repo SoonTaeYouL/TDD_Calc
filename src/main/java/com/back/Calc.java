@@ -4,17 +4,16 @@ public class Calc {
     public static int run(String exp){
         String[] expression = exp.split(" ");
 
-        int num1 = Integer.parseInt(expression[0]);
-        String operator = expression[1];
-        int num2 = Integer.parseInt(expression[2]);
+        int result = Integer.parseInt(expression[0]);
 
-        int result = 0;
-
-        if (operator.equals("+")) {
-             result = num1 + num2;
-        } else if (operator.equals("-")) {
-            result = num1 - num2;
+        for (int i=1; i<expression.length; i+=2) {
+            if (expression[i].equals("+")) {
+                result += Integer.parseInt(expression[i+1]);
+            } else if (expression[i].equals("-")) {
+                result -= Integer.parseInt(expression[i+1]);
+            }
         }
+
         return result;
     }
 }
